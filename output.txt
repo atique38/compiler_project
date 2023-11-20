@@ -1,0 +1,44 @@
+header file
+header file
+
+single line comment
+
+single line comment
+
+funtion 'fun1' is declared. return type: 'int' parametrs: x (int) 
+
+single line comment
+
+function 'fun1' is already declared
+
+single line comment
+
+funtion 'fun2' is declared. return type: 'int' parametrs: b (int)  a (int) 
+
+single line comment
+
+funtion 'fun3' is declared. return type: 'float' parametrs: null (null) 
+
+multiline comment
+
+Function call to 'fun1' is valid
+
+Incorrect number of arguments in calling function 'fun2'
+
+Function call to 'fun3' is valid
+
+Function call to 'fun2' is valid
+variable: v1, datatype: int
+variable: v2, datatype: int
+
+value of v1 = 10
+
+value of v2 = 20
+var: v2 val: 20
+var: v1 val: 10
+20 biyog 10
+
+Function call to 'fun1' is valid
+
+valid structure
+total variable= 2

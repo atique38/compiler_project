@@ -1,0 +1,70 @@
+shonjog abc.h
+shonjog efg.h
+
+ //function declaration
+   action int fun1 (int x) {
+      //fun1
+   }
+   action nothing fun1 (int a, int b) {
+      //fun1
+   }
+   action nothing fun2 (int a, int b) {
+      //fun2
+   }
+   action float fun3(){
+      //fun3
+   }
+
+khela shuru
+   /*int x,y
+   x=0
+   int a
+   string back
+   string str
+   a=10
+   q=20.5
+   p=5
+   str="abc"
+   y=20
+   a = a jog 5
+   int b
+   b = a biyog 5
+   float res1
+   res1 = 10 gun 5
+   int res2,a,b
+   res2 = 10 vagshesh 3
+   a= (10 jog 5) jog (10 gun 2)
+   b= 10 jog 5 gun 2
+   a= a jog b
+
+   if 10<5 {
+      //a= a jog b
+   }
+   elif (2>3) ebong (1<3) {
+      //should be false 
+   }
+   else {
+      int ok
+   }
+
+   if (a>b) othoba (res2<b) {
+      //ok
+   }
+
+   while a>b 
+   ghorao_baccha
+      //while
+   roko_jara*/
+
+   fun1(1)
+   fun2(1)
+   fun3()
+   fun2(1,2)
+   int v1,v2
+   v1=10
+   v2=20
+   
+   fun1(v2 biyog v1)
+khela sesh
+
+  
