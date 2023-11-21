@@ -240,10 +240,10 @@
     struct Parameter* parameters;
 }
 
-%token MAIN_START MAIN_END DATATYPE VARIABLE INT FLOAT STRING NUM PLUS MINUS MULTI DIV MOD LT LTE GT GTE E NE AND OR IF ELSE_IF ELSE
-%token WHILE START END FUN VOID BACK
+%token HEADER MAIN_START MAIN_END DATATYPE VARIABLE INT FLOAT STRING NUM PLUS MINUS MULTI DIV MOD LT LTE GT GTE E NE AND OR IF ELSE_IF ELSE
+%token WHILE START END FUN VOID BACK INPUT OUTPUT SIN COS TAN
 %type<stringValue> VARIABLE STRING NUM
-%type<stringValue> var expression term
+%type<stringValue> var expression term input_var
 %type <parameters> parameter_list argument_list
 
 
@@ -252,7 +252,10 @@
 %nonassoc HIGH
 
 %%
-start: function_declarations MAIN_START statement MAIN_END{printf("\nvalid structure\n");}
+start: headers function_declarations MAIN_START statement MAIN_END{printf("\nvalid structure\n");}
+
+headers: HEADER {printf("Header Library Declared Here\n");}
+    | headers HEADER {printf("Header Library Declared Here\n");}
 
 statement:
     | declaration statement 
@@ -260,6 +263,11 @@ statement:
     | if_statement statement
     | while_statement statement
     | function_call statement
+    | input_statement statement
+    | output_statement statement
+    | sin_statement statement
+    | cos_statement statement
+    | tan_statement statement
     | expression
     ;
 
@@ -605,6 +613,93 @@ argument_list: {
         new_param->paramValue = strdup($3); 
         new_param->next = $$;
         $$ = new_param;
+    }
+    ;
+
+input_statement: INPUT '(' input_var ')' { 
+        printf("is read from console \n");
+    }
+    ;
+
+input_var: VARIABLE {
+        
+        int x=0;
+        
+        if(isReservedKeyword($1)){
+            printf("\nReserved word '%s' can't be used as variable.\n",$1);
+            x = 0;
+        }
+        else if(isDuplicate($1)){
+            //printf("\nvariable '%s' is already declared.\n",$1);
+            x = 1;
+        }
+        else{
+            printf("\nvariable '%s' is not declared.\n",$1);
+        }
+
+        if(x){
+            printf(" '%s' variable ",$1);
+           
+        }
+        
+    }
+    | input_var ',' VARIABLE {
+        int x=0;
+        if(isReservedKeyword($3)){
+            printf("\nReserved word '%s' can't be used as variable.\n",$3);
+            x = 0;
+        }
+        else if(isDuplicate($3)){
+            x = 1;
+        }
+        else{
+            printf("\nvariable '%s' is not already declared.\n",$3);
+        }
+
+        if(x){
+            printf(" '%s' variable ",$3);
+           
+        }
+       
+    }
+    ;
+
+output_statement: OUTPUT '(' expression ')' { 
+        printf("\n%s\n",$3);
+    }
+    | OUTPUT '(' STRING ')' { 
+        printf("\n%s\n",$3);
+    }
+    ;
+
+sin_statement: SIN '(' expression ')' {
+        char *ptr1;
+        double num1 = strtod($3, &ptr1);
+        double res=sin(num1*3.1416/180);
+        printf("\nsin(%s)= %lf\n",$3,res);
+    }
+    ;
+
+cos_statement: COS '(' expression ')' {
+        char *ptr1;
+        double num1 = strtod($3, &ptr1);
+        double res=cos(num1*3.1416/180);
+        printf("\ncos(%s)= %lf\n",$3,res);
+    }
+    ;
+
+tan_statement: TAN '(' expression ')' {
+        if(!strcmp($3,"90")){
+            printf("\ntan(%s)= math error\n",$3);
+        }
+        else{
+            char *ptr1;
+            double num1 = strtod($3, &ptr1);
+            double res=tan(num1*3.1416/180);
+
+            printf("\ntan(%s)= %lf\n",$3,res);
+        }
+        
     }
     ;
 

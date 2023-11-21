@@ -39,37 +39,43 @@
    /* Put the tokens into the symbol table, so that GDB and other debuggers
       know about them.  */
    enum yytokentype {
-     MAIN_START = 258,
-     MAIN_END = 259,
-     DATATYPE = 260,
-     VARIABLE = 261,
-     INT = 262,
-     FLOAT = 263,
-     STRING = 264,
-     NUM = 265,
-     PLUS = 266,
-     MINUS = 267,
-     MULTI = 268,
-     DIV = 269,
-     MOD = 270,
-     LT = 271,
-     LTE = 272,
-     GT = 273,
-     GTE = 274,
-     E = 275,
-     NE = 276,
-     AND = 277,
-     OR = 278,
-     IF = 279,
-     ELSE_IF = 280,
-     ELSE = 281,
-     WHILE = 282,
-     START = 283,
-     END = 284,
-     FUN = 285,
-     VOID = 286,
-     BACK = 287,
-     HIGH = 288
+     HEADER = 258,
+     MAIN_START = 259,
+     MAIN_END = 260,
+     DATATYPE = 261,
+     VARIABLE = 262,
+     INT = 263,
+     FLOAT = 264,
+     STRING = 265,
+     NUM = 266,
+     PLUS = 267,
+     MINUS = 268,
+     MULTI = 269,
+     DIV = 270,
+     MOD = 271,
+     LT = 272,
+     LTE = 273,
+     GT = 274,
+     GTE = 275,
+     E = 276,
+     NE = 277,
+     AND = 278,
+     OR = 279,
+     IF = 280,
+     ELSE_IF = 281,
+     ELSE = 282,
+     WHILE = 283,
+     START = 284,
+     END = 285,
+     FUN = 286,
+     VOID = 287,
+     BACK = 288,
+     INPUT = 289,
+     OUTPUT = 290,
+     SIN = 291,
+     COS = 292,
+     TAN = 293,
+     HIGH = 294
    };
 #endif
 
@@ -90,7 +96,7 @@ typedef union YYSTYPE
 
 
 /* Line 1676 of yacc.c  */
-#line 94 "final.tab.h"
+#line 100 "final.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

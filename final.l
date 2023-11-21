@@ -13,7 +13,10 @@ ArithmeticOperator "jog"|"biyog"|"gun"|"vag"
 
 
 %%
-"shonjog"[ ][a-z]+.[h] {printf("header file\n");}
+"shonjog"[ ][a-z]+.[h] {
+        //printf("header file\n"); 
+        return HEADER;
+    }
 "khela shuru" {return MAIN_START;}
 "khela sesh" {return MAIN_END;}
 
@@ -59,6 +62,13 @@ ArithmeticOperator "jog"|"biyog"|"gun"|"vag"
 "action" {return FUN;}
 "nothing" {return VOID;}
 "back" {return BACK;}
+
+"input_dao" {return INPUT;}
+"dekhao" {return OUTPUT;}
+
+"sin" {return SIN;}
+"cos" {return COS;}
+"tan" {return TAN;}
 
 [-]?[0-9]+ {
     yylval.stringValue = strdup(yytext);

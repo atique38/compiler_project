@@ -16,10 +16,9 @@ shonjog efg.h
    }
 
 khela shuru
-   /*int x,y
+   int x,y
    x=0
    int a
-   string back
    string str
    a=10
    q=20.5
@@ -44,7 +43,9 @@ khela shuru
       //should be false 
    }
    else {
-      int ok
+      /*int ok
+      kjbf
+      sdnkjnknksdnvlk*/
    }
 
    if (a>b) othoba (res2<b) {
@@ -53,8 +54,8 @@ khela shuru
 
    while a>b 
    ghorao_baccha
-      //while
-   roko_jara*/
+      //while loop
+   roko_jara
 
    fun1(1)
    fun2(1)
@@ -63,8 +64,24 @@ khela shuru
    int v1,v2
    v1=10
    v2=20
-   
    fun1(v2 biyog v1)
+
+   input_dao(v1)
+   input_dao(v1,v2)
+   input_dao(v3)
+
+   dekhao(v1)
+   dekhao(v1 jog v2)
+   dekhao("ok")
+
+   sin(45)
+   sin(90)
+   cos(0)
+   tan(45)
+   tan(90)
+
+   string ghorao_baccha
 khela sesh
+   
 
   
